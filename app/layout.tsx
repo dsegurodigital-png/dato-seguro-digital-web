@@ -35,12 +35,21 @@ export const metadata: Metadata = {
     siteName: "Dato Seguro Digital",
     locale: "es_CO",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Dato Seguro Digital — Protegemos tus datos, protegemos tu tranquilidad",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Dato Seguro Digital",
     description:
       "Orientación y acompañamiento para personas que sufren acoso por aplicaciones de crédito digital ilegales en Colombia.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
