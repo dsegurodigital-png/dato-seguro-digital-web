@@ -2,6 +2,8 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { obtenerIp, permitir } from "@/lib/rate-limit";
+import { registrarEnGoogleSheets } from "@/lib/integrations/google-sheets";
+import { notificarNuevaSolicitud } from "@/lib/integrations/correo";
 
 const VERSION_AUTORIZACION = "web-consent-v1.0";
 
@@ -151,8 +153,10 @@ export async function POST(request: Request) {
       ? data.descripcion.trim()
       : null;
 
+  let solicitudGuardada: { id: string; fecha_registro: string | null } | null = null;
+
   try {
-    const { error } = await supabase
+    const { data: inserted, error } = await supabase
       .from("solicitudes_dsd")
       .insert({
         nombre: data.nombre.trim(),
@@ -162,7 +166,9 @@ export async function POST(request: Request) {
         consentimiento: true,
         texto_autorizacion: TEXTO_AUTORIZACION,
         consentimiento_registrado_en: new Date().toISOString(),
-      });
+      })
+      .select("id, fecha_registro")
+      .single();
 
     if (error) {
       // No registrar datos personales ni mensajes internos del proveedor.
@@ -176,6 +182,8 @@ export async function POST(request: Request) {
         { status: 500 },
       );
     }
+
+    solicitudGuardada = inserted;
   } catch {
     return NextResponse.json(
       {
@@ -184,6 +192,31 @@ export async function POST(request: Request) {
       },
       { status: 503 },
     );
+  }
+
+  // La solicitud ya quedó guardada en Supabase (fuente de verdad). Estas dos
+  // integraciones son respaldo/notificación adicionales: si fallan, no deben
+  // impedir que el usuario reciba la confirmación de que su solicitud fue
+  // recibida.
+  if (solicitudGuardada) {
+    const fecha = solicitudGuardada.fecha_registro ?? new Date().toISOString();
+
+    await Promise.allSettled([
+      registrarEnGoogleSheets({
+        id: solicitudGuardada.id,
+        nombre: data.nombre.trim(),
+        contacto: data.contacto.trim(),
+        descripcion,
+        fecha,
+      }),
+      notificarNuevaSolicitud({
+        id: solicitudGuardada.id,
+        nombre: data.nombre.trim(),
+        contacto: data.contacto.trim(),
+        descripcion,
+        fecha,
+      }),
+    ]);
   }
 
   return NextResponse.json(
