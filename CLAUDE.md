@@ -143,3 +143,17 @@ código (se puede retirar de `.env.local` y del hosting).
   cambio no trivial.
 - Reporta en español, con diagnóstico separado de hipótesis, y qué pruebas
   ejecutaste realmente (no afirmes que algo "pasó" si no lo corriste).
+
+## Despliegue (9 oct 2026)
+
+- **Repo**: https://github.com/dsegurodigital-png/dato-seguro-digital-web (privado, cuenta propia de Dato Seguro Digital — independiente de NeurallFlow).
+- **Hosting**: Vercel, proyecto `dato-seguro-digital-web` bajo la cuenta `dsegurodigital-png`.
+- **Variables de entorno** cargadas en Vercel (Project → Settings → Environment Variables): `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY`, `ADMIN_EMAIL`.
+- **Dominio**: `datosegurodigital.com` y `www.datosegurodigital.com` agregados en Vercel; DNS en Cloudflare con registros CNAME (`@` y `www`) hacia `5040b2864e8b784b.vercel-dns-017.com`, en modo "DNS only" (sin proxy naranja de Cloudflare — necesario para que Vercel emita el certificado SSL).
+- **Migraciones SQL** (0001, 0002) confirmadas ejecutadas en el proyecto real de Supabase.
+- Para futuros cambios: trabajar en local, `git add -A && git commit && git push origin master` — Vercel re-despliega automático en cada push a `master`.
+
+### Pendiente antes de anunciar el lanzamiento
+- Confirmar que `datosegurodigital.com` y `www` pasen a "Valid Configuration" en Vercel (propagación DNS).
+- Login real de admin en producción (no solo en local).
+- Revisión legal de las políticas de datos y NIT cuando la empresa esté constituida.
