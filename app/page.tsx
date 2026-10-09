@@ -110,6 +110,13 @@ export default function Home() {
             </a>
 
             <a
+              href="#preguntas-frecuentes"
+              className="transition hover:text-[#02C39A]"
+            >
+              Preguntas frecuentes
+            </a>
+
+            <a
               href="#privacidad"
               className="transition hover:text-[#02C39A]"
             >
@@ -780,6 +787,90 @@ export default function Home() {
 
 
       {/* =========================================================
+          PREGUNTAS FRECUENTES
+      ========================================================= */}
+      <section id="preguntas-frecuentes" className="bg-white py-20">
+
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+
+          <div className="mx-auto max-w-2xl text-center">
+
+            <span className="text-sm font-black uppercase tracking-[0.18em] text-[#02C39A]">
+              Preguntas frecuentes
+            </span>
+
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0B2340] sm:text-4xl">
+              Resolvemos tus dudas antes de que continúes.
+            </h2>
+
+          </div>
+
+          <div className="mt-12 space-y-4">
+
+            <details className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 open:bg-white open:shadow-sm">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-[#0B2340]">
+                ¿La orientación tiene algún costo?
+                <span className="shrink-0 text-xl text-[#02C39A] transition group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                La orientación inicial no tiene costo. Nuestro objetivo es
+                ayudarte a entender tu situación, organizar la información y
+                conocer las opciones que tienes frente al acoso de una app de
+                crédito digital.
+              </p>
+            </details>
+
+            <details className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 open:bg-white open:shadow-sm">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-[#0B2340]">
+                ¿Qué es y qué no es Dato Seguro Digital?
+                <span className="shrink-0 text-xl text-[#02C39A] transition group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                Somos un servicio de orientación para personas afectadas por
+                el acoso de aplicaciones de préstamos digitales ilegales. No
+                somos una entidad del Estado, un despacho de abogados ni
+                hacemos parte de ninguna app de crédito. No gestionamos pagos
+                ni negociamos deudas en tu nombre.
+              </p>
+            </details>
+
+            <details className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 open:bg-white open:shadow-sm">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-[#0B2340]">
+                ¿Pueden detener las llamadas o mensajes de acoso?
+                <span className="shrink-0 text-xl text-[#02C39A] transition group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                No podemos detener directamente las llamadas o mensajes, pero
+                te orientamos sobre tus derechos, cómo conservar evidencias y
+                qué opciones existen para reportar la situación ante las
+                entidades competentes.
+              </p>
+            </details>
+
+            <details className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 open:bg-white open:shadow-sm">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-[#0B2340]">
+                ¿Qué pasa con la información que comparto?
+                <span className="shrink-0 text-xl text-[#02C39A] transition group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                Se usa únicamente para orientarte dentro de este proceso, de
+                acuerdo con la autorización que das y nuestra{" "}
+                <a href="/politica-de-datos" className="font-semibold text-[#028090] hover:text-[#02C39A]">
+                  política de tratamiento de datos
+                </a>
+                . No se vende ni se comparte con terceros para fines
+                distintos a los informados.
+              </p>
+            </details>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =========================================================
           CONTACTO / CTA FINAL
       ========================================================= */}
       <section className="bg-[#0B2340] py-20">
@@ -868,6 +959,13 @@ export default function Home() {
                   className="block transition hover:text-[#02C39A]"
                 >
                   Cómo funciona
+                </a>
+
+                <a
+                  href="#preguntas-frecuentes"
+                  className="block transition hover:text-[#02C39A]"
+                >
+                  Preguntas frecuentes
                 </a>
 
                 <a
