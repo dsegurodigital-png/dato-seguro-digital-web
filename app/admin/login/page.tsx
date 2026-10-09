@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 
 export default function AdminLoginPage() {
@@ -60,8 +61,15 @@ export default function AdminLoginPage() {
     <main className="flex min-h-screen items-center justify-center bg-[#f3f6fa] px-5 py-10">
       <section className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5 sm:p-10">
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0B2340] text-2xl font-bold text-white">
-            DS
+          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center">
+            <Image
+              src="/icono.png"
+              alt="Dato Seguro Digital"
+              width={64}
+              height={64}
+              className="h-16 w-16 object-contain"
+              priority
+            />
           </div>
 
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#028090]">
