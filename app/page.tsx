@@ -11,6 +11,7 @@ export default function Home() {
   const [enviando, setEnviando] = useState(false);
   const [mensaje, setMensaje] = useState("");
   const [tipoMensaje, setTipoMensaje] = useState<"exito" | "error" | "">("");
+  const [falloEnvio, setFalloEnvio] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -26,6 +27,7 @@ export default function Home() {
 
     setMensaje("");
     setTipoMensaje("");
+    setFalloEnvio(false);
 
     if (nombre.length < 2 || nombre.length > 100) {
       setMensaje("Ingresa un nombre válido (entre 2 y 100 caracteres).");
@@ -76,6 +78,7 @@ export default function Home() {
     } catch (error) {
       setMensaje(error instanceof Error ? error.message : "Ocurrió un error. Inténtalo más tarde.");
       setTipoMensaje("error");
+      setFalloEnvio(true);
     } finally {
       setEnviando(false);
     }
@@ -648,6 +651,17 @@ export default function Home() {
                   >
                     {mensaje}
                   </p>
+                )}
+
+                {falloEnvio && (
+                  <a
+                    href="https://wa.me/573123797011?text=Hola%2C%20intent%C3%A9%20enviar%20el%20formulario%20de%20Dato%20Seguro%20Digital%20y%20no%20funcion%C3%B3.%20Necesito%20orientaci%C3%B3n."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 flex w-full items-center justify-center rounded-xl bg-[#25D366] px-4 py-3 text-center text-sm font-semibold text-white transition hover:brightness-95"
+                  >
+                    Escríbenos por WhatsApp y te atendemos ahí
+                  </a>
                 )}
 
                 <p className="mt-4 text-center text-xs leading-5 text-slate-500">
