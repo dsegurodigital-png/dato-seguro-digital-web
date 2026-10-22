@@ -545,7 +545,7 @@ export default function Home() {
               <div>
                 <h3 className="text-xl font-black text-[#0B2340]">Información de contacto</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-500">
-                  Estamos preparando el canal de recepción. El formulario permanece deshabilitado mientras completamos las revisiones de seguridad y privacidad. No ingreses datos personales reales todavía.
+                  Comparte solo los datos necesarios para que podamos contactarte. No envíes contraseñas, códigos de verificación, PIN ni claves bancarias.
                 </p>
 
                 <div className="mt-6 grid gap-5 sm:grid-cols-2">
@@ -665,7 +665,7 @@ export default function Home() {
                 )}
 
                 <p className="mt-4 text-center text-xs leading-5 text-slate-500">
-                  El envío público permanece deshabilitado mientras completamos las verificaciones de seguridad, privacidad y tratamiento de datos.
+                  Al enviar, tu autorización queda registrada junto con la versión de la política que aceptaste.
                 </p>
               </div>
             </form>
@@ -702,9 +702,8 @@ export default function Home() {
                 </h2>
 
                 <p className="mt-5 max-w-2xl leading-7 text-slate-300">
-                  Consulta el borrador de la política y conoce los criterios propuestos para
-                  el tratamiento de datos personales. La versión definitiva se publicará
-                  después de validar la identidad del responsable y el flujo real de información.
+                  Consulta quién es el responsable, para qué usamos tus datos, con qué
+                  proveedores trabajamos y cómo puedes ejercer tus derechos como titular.
                 </p>
 
               </div>
@@ -1007,10 +1006,10 @@ export default function Home() {
                 Contacto y responsable
               </h3>
               <div className="mt-4 space-y-2 text-sm leading-6 text-slate-400">
-                <p><strong className="text-slate-300">Nombre o razón social legal:</strong> Pendiente de confirmar</p>
-                <p><strong className="text-slate-300">Tipo de responsable:</strong> Pendiente de confirmar</p>
-                <p><strong className="text-slate-300">NIT:</strong> Pendiente de confirmar</p>
-                <p><strong className="text-slate-300">Dirección informada:</strong> Calle 18 No. 50C-34</p>
+                <p><strong className="text-slate-300">Responsable:</strong> Anyi Stefania Toro Carvajal (persona natural)</p>
+                <p><strong className="text-slate-300">Establecimiento de comercio:</strong> Dato Seguro Digital · Matrícula mercantil 435570</p>
+                <p><strong className="text-slate-300">NIT:</strong> 1007499214-8</p>
+                <p><strong className="text-slate-300">Dirección:</strong> Calle 18 No. 50C-34, barrio Víctor Félix, Neiva, Huila</p>
                 <p><strong className="text-slate-300">Correo:</strong> <a className="hover:text-[#02C39A]" href="mailto:dsegurodigital@gmail.com">dsegurodigital@gmail.com</a></p>
                 <p><strong className="text-slate-300">WhatsApp:</strong> <a className="hover:text-[#02C39A]" href="https://wa.me/573123797011">+57 312 379 7011</a></p>
               </div>
