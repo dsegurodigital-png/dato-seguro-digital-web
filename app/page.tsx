@@ -1009,7 +1009,7 @@ export default function Home() {
                 <p><strong className="text-slate-300">Responsable:</strong> Anyi Stefania Toro Carvajal (persona natural)</p>
                 <p><strong className="text-slate-300">Establecimiento de comercio:</strong> Dato Seguro Digital · Matrícula mercantil 435570</p>
                 <p><strong className="text-slate-300">NIT:</strong> 1007499214-8</p>
-                <p><strong className="text-slate-300">Dirección:</strong> Calle 18 No. 50C-34, barrio Víctor Félix, Neiva, Huila</p>
+                <p><strong className="text-slate-300">Domicilio:</strong> Neiva, Huila</p>
                 <p><strong className="text-slate-300">Correo:</strong> <a className="hover:text-[#02C39A]" href="mailto:dsegurodigital@gmail.com">dsegurodigital@gmail.com</a></p>
                 <p><strong className="text-slate-300">WhatsApp:</strong> <a className="hover:text-[#02C39A]" href="https://wa.me/573123797011">+57 312 379 7011</a></p>
               </div>
