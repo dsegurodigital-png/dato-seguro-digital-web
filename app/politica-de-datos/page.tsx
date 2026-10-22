@@ -21,7 +21,7 @@ export default function PoliticaDeDatos() {
               <li>Responsable del tratamiento: Anyi Stefania Toro Carvajal, persona natural comerciante.</li>
               <li>Establecimiento de comercio: Dato Seguro Digital (matrícula mercantil No. 435570, Cámara de Comercio del Huila).</li>
               <li>NIT: 1007499214-8 (matrícula mercantil de la persona natural No. 435569).</li>
-              <li>Domicilio y dirección de notificación: Calle 18 No. 50C-34, barrio Víctor Félix, Neiva, Huila, Colombia.</li>
+              <li>Domicilio: Neiva, Huila, Colombia. Para notificaciones y ejercicio de derechos, usa el correo y el WhatsApp indicados abajo.</li>
               <li>Correo: <a className="font-semibold text-[#028090] underline" href="mailto:dsegurodigital@gmail.com">dsegurodigital@gmail.com</a>.</li>
               <li>Teléfono/WhatsApp: <a className="font-semibold text-[#028090] underline" href="https://wa.me/573123797011">+57 312 379 7011</a>.</li>
               <li>Sitio web: datosegurodigital.com.</li>
