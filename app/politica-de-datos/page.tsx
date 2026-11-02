@@ -1,4 +1,11 @@
 import Link from "next/link";
+import FormularioAutorizacion from "../components/FormularioAutorizacion";
+
+export const metadata = {
+  title: "Política de datos y autorización",
+  description:
+    "Lee la Política de Tratamiento de Datos Personales de Dato Seguro Digital y registra tu autorización para recibir orientación.",
+};
 
 export default function PoliticaDeDatos() {
   return (
@@ -6,13 +13,18 @@ export default function PoliticaDeDatos() {
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
           <Link href="/" className="font-bold text-[#0B2340] hover:text-[#028090]">Dato Seguro Digital</Link>
-          <Link href="/" className="text-sm font-semibold text-[#028090] underline">Volver al inicio</Link>
+          <a href="#autorizar" className="rounded-full bg-[#02C39A] px-4 py-2 text-sm font-bold text-[#0B2340]">Ir a autorizar</a>
         </div>
       </header>
       <article className="mx-auto max-w-4xl px-6 py-12 lg:py-16">
         <p className="text-sm font-black uppercase tracking-[0.18em] text-[#028090]">Privacidad</p>
         <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">Política de Tratamiento de Datos Personales</h1>
         <p className="mt-4 leading-7 text-slate-600">Versión 1.1 — vigente desde el 22 de octubre de 2026.</p>
+        <div className="mt-6 rounded-2xl border border-[#02C39A]/30 bg-[#02C39A]/10 p-5 text-sm leading-6 text-slate-700">
+          <p className="font-bold text-[#0B2340]">¿Vienes a autorizar el tratamiento de tus datos?</p>
+          <p className="mt-1">Lee la política a continuación. Al final de esta página encontrarás el formulario donde registras tu autorización.</p>
+          <a href="#autorizar" className="mt-3 inline-flex rounded-full bg-[#0B2340] px-5 py-2.5 font-bold text-white">Ir al formulario de autorización</a>
+        </div>
 
         <section className="mt-10 space-y-8 leading-7 text-slate-700">
           <div>
@@ -86,6 +98,14 @@ export default function PoliticaDeDatos() {
             <h2 className="text-xl font-black text-[#0B2340]">12. Vigencia y cambios</h2>
             <p className="mt-3">Esta política rige desde el 22 de octubre de 2026. Si la modificamos de forma sustancial, publicaremos la nueva versión en esta página y, cuando la ley lo exija, solicitaremos nuevamente tu autorización.</p>
           </div>
+        </section>
+        <section id="autorizar" className="mt-14 scroll-mt-6">
+          <div className="mb-8 text-center">
+            <span className="text-sm font-black uppercase tracking-[0.18em] text-[#028090]">Autorización</span>
+            <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">Autoriza el tratamiento de tus datos</h2>
+            <p className="mx-auto mt-3 max-w-2xl leading-7 text-slate-600">Completa tus datos de contacto y registra tu autorización después de haber leído esta política. También puedes escribirnos directamente por WhatsApp.</p>
+          </div>
+          <FormularioAutorizacion />
         </section>
         <div className="mt-12 rounded-2xl bg-[#0B2340] p-6 text-white">
           <p className="font-black">Contacto de privacidad</p>
